@@ -1,0 +1,48 @@
+/* Colors */
+// Body
+$bodyBackgroundColor: rgb(244, 244, 241);
+
+// SideBar
+$sidebarForeColor: rgb(143, 142, 142);
+$sidebarActiveBorder: rgb(245, 130, 32);
+$sidebarHoverForeColor: rgb(255, 255, 255);
+$sidebarHoverBackColor: rgb(56, 54, 54);
+$sidebarLogoColor: rgb(255, 255, 255);
+$sidebarBackColor: rgb(0, 0, 0);
+$avatarNameForeColor: rgb(86, 129, 159);
+$avatarStatusActive: rgb(14, 182, 48);
+
+//TopBar
+$topbarHeight: 70px;
+$topbarBackColor: rgb(255, 255, 255);
+$topbarBorderColor: rgb(172, 172, 172);
+$topbarFontColor: rgb(126, 126, 126);
+$topbarDropDownBackColor: rgb(249, 249, 249);
+$topbarDropDownShadowColor: rgba(0, 0, 0, 0.2);
+$topbarHoverForeColor: rgb(0, 0, 0);
+$topbarHoverBackColor: rgb(221, 221, 221);
+$topbarProfileNameForeColor: rgb(86, 129, 159);
+$topbarNotificationWarningColor: rgb(248, 178, 1);
+
+//MainContainer
+$mainContainerFont1Color: rgb(143, 142, 142);
+$mainContainerBorderColor1: rgb(220, 220, 220);
+$mainContainerBorderColor2: rgba(220, 220, 220, 0);
+$mainContainerBorderColor3: rgb(230, 230, 230);
+$mainContainerShadowColor: rgb(143, 142, 142);
+
+//Main-GeneralTab
+$generalTabButtonBackColor: rgb(245, 130, 32);
+$generalTabButtonBackColor2: rgb(245, 89, 32);
+$generalTabButtonForeColor:rgb(255, 255, 255);
+
+/* Font sizes */
+// SideBar
+$paragraph-font-size: 18px;
+
+/* Fonts */
+$brand-font: "Open Sans", Helvetica, Arial;
+$paragraph-font: "Open Sans", Helvetica, Arial;
+
+/* Sizing */
+$sidebarWidth: 200px;

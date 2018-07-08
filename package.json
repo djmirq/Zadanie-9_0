@@ -41,6 +41,7 @@
       "postcss-cli": "^5.0.1"
    },
    "dependencies": {
-      "eslint": "^5.0.1"
+      "eslint": "^5.0.1",
+      "normalize.css": "^8.0.0"
    }
 }
