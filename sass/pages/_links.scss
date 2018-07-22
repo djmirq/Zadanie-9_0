@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+.contents-links {
+  margin: 0 auto;
+  max-width: 70%;
+  width: 70%;
+  .button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    button {
+      border: none;
+      background-color: $generalTabButtonBackColor;
+      color: rgb(255, 255, 255);
+      padding: 10px 15px;
+      font-family: $paragraph-font;
+      font-weight: 0;
+      margin: 15px;
+      cursor: pointer;
+    }
+  }
+  .hoverTable {
+    font-family: $paragraph-font;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    tr:first-of-type {
+      border-top: 1px solid rgb(208, 208, 208);
+    }
+ 
+    tr {
+      padding: 10px 10px;
+      border-bottom: 1px solid rgb(208, 208, 208);
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      &:hover {
+        background-color: rgb(237, 237, 237);
+        cursor: pointer;
+        .non-visible {
+          visibility: visible;
+        }
+      }
+      td {
+        min-height: 40px;
+        a{
+          padding:0;
+          margin:0;
+        }
+      }
+      td:nth-of-type(1) {
+        color: gray;
+      }
+      td:nth-of-type(2) {
+        color: $topbarProfileNameForeColor;
+      }
+      td:nth-of-type(3) {
+        color: $generalTabButtonBackColor;
+        text-align: center;
+        a:visited,
+        a:link {
+          text-decoration: none;
+          color: $generalTabButtonBackColor;
+        }
+      }
+      td:nth-of-type(4) {
+        color: rgb(84, 81, 81);
+        text-align: center;
+      }
+    }
+  }
+}
+
+ 
+@for $i from 1 through 12 {
+  .col-sm-#{$i} {
+    $width: 100% / 12 * $i;
+    flex: 0 0 $width;
+    max-width: $width;
+  }
+}
+
+@mixin grid($prefix) {
+  @for $i from 1 through 12 {
+    .col-#{$prefix}-#{$i} {
+      $width: 100% / 12 * $i;
+      flex: 0 0 $width;
+      max-width: $width;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  @include grid('sm');
+  .non-visible {
+    visibility: visible;
+  }
+  td{
+    text-align: center;
+  }
+}
+
+@media(min-width: 768px) {
+  @include grid('md');
+  .non-visible {
+    visibility: visible;
+  }
+  td{
+    padding-top : 10px;
+  
+  &:nth-of-type(1) {
+    text-align: center;
+  }
+  &:nth-of-type(2) {
+    text-align: left;
+  }
+}}
+
+@media(min-width: 992px) {
+  @include grid('lg');
+  .non-visible {
+    visibility: hidden;
+  }
+  td{
+    text-align:left;
+    &:nth-of-type(1) {
+      text-align: left;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  @include grid('xl');
+  .non-visible {
+    visibility: hidden;
+  }
+}

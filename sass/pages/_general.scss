@@ -1,0 +1,180 @@
+
+
+
+.contents-general {
+  .datePicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-bottom: 1px solid $mainContainerBorderColor1;
+    .frame {
+      border: 1px solid $mainContainerBorderColor1;
+      border-radius: 3px;
+      display: flex;
+    }
+    a {
+      font-family: paragraph-font;
+      text-decoration: none;
+      color: black;
+      padding: 0px 60px 0px 20px;
+      font-size: 17px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a:nth-of-type(2) {
+      border-left: 2px solid $mainContainerBorderColor1;
+      border-image: linear-gradient(
+        to bottom,
+        $mainContainerBorderColor2 15%,
+        $mainContainerBorderColor3 15%,
+        $mainContainerBorderColor3 90%,
+        $mainContainerBorderColor2 90%
+      );
+      border-image-slice: 1;
+    }
+    .icon-calendar {
+      padding-right: 0px;
+    }
+  }
+  .btn {
+    background-color: $generalTabButtonBackColor;
+    border: none;
+    color: $generalTabButtonForeColor;
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 13px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    &:hover {
+      background-color: $generalTabButtonBackColor2;
+    }
+  }
+  .chart {
+    max-width: 80%;
+    margin: 0 auto;
+    .chartData {
+      padding: 35px 0px 50px;
+      display: flex;
+      justify-content: center;
+      .stats {
+        height: 80px;
+        display: flex;
+        min-width: 60%;
+        width: 100%;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .stat {
+          border-bottom: 1px solid $mainContainerBorderColor1;
+          display: flex;
+          min-width: 45%;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          a {
+            font-family: $paragraph-font;
+          }
+          .data {
+            float: left;
+            flex: 1;
+            text-align: right;
+          }
+          .parameter {
+            color: $mainContainerFont1Color;
+            flex: 4;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    h2 {
+      color: $sidebarForeColor;
+      font-family: $paragraph-font;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 0;
+      margin: 0;
+    }
+    .legend {
+      padding: 30px 0px 0px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      div {
+        font-family: $paragraph-font;
+        height: 40px;
+        color: $mainContainerFont1Color;
+        padding: 0 10px 0 0;
+        display: flex;
+        align-items: center;
+        margin: 10px 20px;
+        background-color: rgb(240, 240, 240);
+        border-radius: 3px;
+      }
+      .legend-1 {
+        .circle {
+          fill: rgb(128, 191, 202);
+        }
+      }
+      .legend-2 {
+        .circle {
+          fill: $generalTabButtonBackColor;
+        }
+      }
+      .legend-3 {
+        background-color: rgb(255, 255, 255);
+        .circle {
+          fill: rgb(89, 182, 109);
+        }
+      }
+    }
+    .svgchart {
+      padding: 50px 0;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      .chartColumns {
+        .col1 {
+          fill: rgb(128, 191, 202);
+        }
+        .col2 {
+          fill: $generalTabButtonBackColor;
+        }
+      }
+    }
+  }
+}
+
+
+
+#chart {
+ 
+  padding-top: 50px;
+}
+
+ 
+
+
+
+@media screen and (max-width: $Media850) {
+  .contents-general .chart .chartData .stats {
+     display: table;
+     
+    .stat{
+      min-width:100%;
+      padding:10px 0px;
+    }
+  }
+  .contents-general .datePicker .frame {
+    display: block;
+    a {
+      border-bottom: 1px solid gainsboro;
+      border-left: none;
+      padding: 0px 30px;
+    }
+  }
+}

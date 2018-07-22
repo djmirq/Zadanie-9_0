@@ -1,0 +1,398 @@
+@-webkit-keyframes animatetop {
+  from {
+    top: -200px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -200px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.links-modal {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  .links-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+    .links-modal-header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      .close_links:hover,
+      .close_links:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      h1 {
+        width: 100%;
+        font-family: $paragraph-font;
+        font-weight: 5;
+        color: $mainContainerFont1Color;
+        margin: 0;
+        padding: 14px 10px 0 20px;
+        min-height: 50px;
+        border-bottom: 1px solid $mainContainerBorderColor1;
+        font-size: 18px;
+        display: block;
+        align-items: center;
+        float: left;
+        .close_links {
+          color: $mainContainerFont1Color;
+          float: right;
+          right: 0;
+          font-size: 32px;
+          line-height: 0.7;
+        }
+      }
+    }
+
+    .links-modal-body {
+      .rows {
+        display: flex;
+        flex-flow: wrap;
+        padding: 30px 0px 15px 10px;
+        font-family: $paragraph-font;
+        color: $mainContainerFont1Color;
+        font-size: 14px;
+        font-weight: 5;
+        .banner-name,
+        .generatedlink {
+          font-family: $paragraph-font;
+          color: $mainContainerFont1Color;
+          font-size: 14px;
+          width: 100%;
+          margin: 0px 0px 10px 0px;
+          outline: none;
+          &:valid {
+            background-color: white;
+          }
+          .generatedlinkpadding {
+            border-radius: 3px;
+            border: 1px solid gainsboro;
+            padding: 10px 10px 10px 10px;
+            height: 35px;
+          }
+        }
+        .banner-name {
+          margin-top: 15px;
+          padding: 10px 10px;
+          margin: 15px 0px 0px 0px;
+          border-radius: 3px;
+          border: 1px solid gainsboro;
+        }
+        .links-dropdown {
+          font-family: $paragraph-font;
+          color: $mainContainerFont1Color;
+          font-size: 14px;
+          width: 100%;
+          padding: 10px 10px;
+          margin-top: 15px;
+          outline: none;
+          border-radius: 3px;
+          border: 1px solid $mainContainerBorderColor1;
+          cursor: pointer;
+          background: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 7 5' fill='"+$mainContainerBorderColor1+"' style='enable-background:new 0 0 7 5;' xml:space='preserve'%3E%3Cpolygon points='3.5,4.2 0.1,0.9 0.9,0.1 3.5,2.8 6.1,0.1 6.9,0.9 '/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-size: 15px 10px;
+          background-position: right 10px center;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+        label {
+          margin-bottom: 0px;
+          font-family: $paragraph-font;
+          color: $mainContainerFont1Color;
+          font-size: 16px;
+          -webkit-column-break-inside: avoid;  
+        }
+        div {
+          padding-right: 15px;
+        }
+      }
+      .row3 {
+        padding: 20px 0px 20px;
+        .selectbanners,
+        .selectwebsites {
+          padding: 0px 15px 17px 10px;
+        }
+      }
+      .row4 {
+        padding-top: 0px;
+        .button {
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          width: 100%;
+          padding-right: 0px;
+          button {
+            width: 100%;
+            border: none;
+            border-radius: 3px;
+            color: rgb(255, 255, 255);
+            padding: 10px 0px;
+            font-family: $paragraph-font;
+            font-weight: 0;
+            margin: 0px 0px 10px;
+            cursor: pointer;
+          }
+          .save {
+            background-color: $generalTabButtonBackColor;
+          }
+          .copy {
+            a {
+              padding-left: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+.checkboxcontainer {
+  display: block;
+  position: relative;
+  padding: 16px 0px 13px 40px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  //border: 1px solid red;
+  // background: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 13 13' fill='black' style='enable-background:new 0 0 13 13;' xml:space='preserve'%3E%3Cpath d='M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z'/%3E%3C/svg%3E");
+  // background-repeat: no-repeat;
+  // background-size: 15px 10px;
+  // background-position: right 10px center;
+  &:hover {
+    background: $mainContainerBorderColor1;
+    .non-visible {
+      visibility: visible;
+    }
+  }
+}
+
+/* Hide the browser's default checkbox */
+.checkboxcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  border: solid 1px $mainContainerBorderColor1;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 15px;
+  left: 11px;
+  height: 19px;
+  width: 18px;
+  background-color: white;
+  border: solid 1px $mainContainerBorderColor1;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxcontainer:hover input ~ .checkmark {
+  background-color: white;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxcontainer input:checked ~ .checkmark {
+  background-color: rgb(4, 174, 0);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxcontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxcontainer .checkmark:after {
+  left: 4px;
+  top: 2px;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+//https://websemantics.uk/tools/svg-to-background-image-conversion/
+.img {
+  background: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 13 13' fill='#7698B0' style='enable-background:new 0 0 13 13;' xml:space='preserve'%3E%3Cpath d='M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z'/%3E%3C/svg%3E");
+  //mask: url("/images/icons/show.svg");
+  background-repeat: no-repeat;
+  background-size: 13px 13px;
+  background-position: right 0px center;
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  width: 18px;
+  color: transparent;
+}
+.links-modal .links-modal-content .links-modal-body .row3 label {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 0px;
+}
+.columnwebsites {
+  column-count: 3;
+}
+.columnwebsitesvscroll{
+    max-height: 475px;
+    overflow: auto;
+}
+.columnwebsites::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+@media (max-width: 767px) {
+  .row2,
+  .row1 {
+    div {
+      padding-top: 15px;
+    }
+  }
+  .row3 .selectwebsites {
+    border-bottom: 1px solid $mainContainerBorderColor1;
+  }
+  .rows .generatedlink {
+    padding-right: 10px;
+  }
+  .compain label{
+    display: none
+  }
+  .columnwebsites {
+    column-count: 1;
+  }
+}
+@media (min-width: 768px) {
+  .row2,
+  .row1 {
+    div {
+      padding-top: 15px;
+    }
+  }
+  .row3 .selectwebsites {
+    border-bottom: 1px solid $mainContainerBorderColor1;
+  }
+  .rows .generatedlink {
+    padding-right: 10px;
+  }
+  .compain label{
+    display: none
+  }
+  .columnwebsites {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .row2,
+  .row1 {
+    div {
+      padding-top: 0px;
+    }
+  }
+  .row3 .selectwebsites {
+    border-top: 1px solid $mainContainerBorderColor1;
+  }
+  .compain label{
+    display: initial;
+    visibility: collapse;
+  }
+  .columnwebsites {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .row2,
+  .row1 {
+    div {
+      padding-top: 0px;
+    }
+  }
+  .row3 .selectwebsites {
+    border-top: 1px solid $mainContainerBorderColor1;
+  }
+  .compain label{
+    display: initial;
+    visibility: collapse;
+  }
+  .columnwebsites {
+    column-count: 4;
+  }
+}
+
+}
+
+
+// select.icon-menu option {
+//     background-repeat:no-repeat;
+//     background-position:bottom left;
+//     padding-left:30px;
+//     }
+//     select#language option[value="US"] {
+//     background: url('../../images/English_flag.png') no-repeat 97% 50% #ffffff;
+//     background-size: 11px 7px;
+//     }
+
+// #language option[value="EN"] {
+//   background-image: url("../../images/English_flag.png");
+//   background-repeat: no-repeat;
+//   background-size: auto;
+
+//   background-size: cover;
+
+//   padding: 2px 0 2px 20px;
+//   background-repeat: no-repeat;
+//   background-position: 1px 2px;
+//   vertical-align: middle;
+
+// }

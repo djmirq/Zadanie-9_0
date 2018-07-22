@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+.contents-personal_data {
+  margin: 0 auto;
+  margin-top: 25px;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  //justify-content: center;
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    border: none;
+    label {
+      font-family: $paragraph-font;
+      font-size: $paragraph-font-size;
+      color: $sidebarForeColor;
+      font-weight: 0;
+      width: 150px;
+      padding: 5px;
+      // border: 1px solid red;
+    }
+    input {
+      font-family: $paragraph-font;
+      font-size: 14px;
+      width: 250px;
+      padding: 5px 10px;
+      outline: none;
+      border: 1px solid rgb(179, 179, 179);
+      border-radius: 3px;
+      &:valid {
+        background: rgb(255, 255, 255);
+      }
+      &:invalid {
+        background: rgb(238, 179, 179);
+        outline: none;
+      }
+    }
+  }
+  hr {
+    //position: absolute;
+    width: 100%;
+    margin: 25px 0px;
+    height: 0px;
+    border-top: solid 1px rgb(220, 220, 220);
+  }
+
+  .button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    button {
+      border: none;
+      background-color: $generalTabButtonBackColor;
+      color: rgb(255, 255, 255);
+      padding: 10px 15px;
+      font-family: $paragraph-font;
+      font-weight: 0;
+      margin: 0px 0px 10px;
+      cursor: pointer;
+    }
+  }
+
+  label {
+    input[type="checkbox"] {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      opacity: 1;
+
+      + .icon {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #000000;
+      }
+
+      &:checked + .icon {
+        background-color: #000000;
+      }
+    }
+  }
+}
+
+// * {
+//   box-sizing: border-box;
+// }
+
+ 

@@ -9,49 +9,60 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
 </head>
 
 <body>
-
     <div class="pasek">
 
     </div>
 
-
-
     <!-- side navigation -->
     <div class="sidenav">
 
-
         <div class="logo">
             <a>Just do it</a>
-            <!-- <div class="hamburger">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div> -->
 
-            <button class="hamburger hamburger--3dx" type="button" style="border:none">
+            <button class="hamburger hamburger--minus is-active" type="button">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
             </button>
         </div>
 
-        <a href="#" class="glyphter icon-general active">
-            General</a>
-        <a class="glyphter icon-details" href="#">
-            Details</a>
-        <a class="glyphter icon-links" href="#">
-            Links</a>
-        <a class="glyphter icon-banners" href="#">
-            Banners</a>
-        <a class="glyphter icon-personaldata" href="#">
-            Personal data</a>
-        <a class="glyphter icon-payout" href="#">
-            Payout</a>
-        <a class="glyphter icon-postback" href="#">
-            Postback</a>
+        <ul id="menu1">
+            <li>
+                <a href="#" class="glyphter icon-general active">
+                    General</a>
+            </li>
+            <li>
+                <a class="glyphter icon-details" href="#">
+                    Details</a>
+            </li>
+            <li>
+                <a class="glyphter icon-links" href="#">
+                    Links</a>
+            </li>
+            <li>
+                <a class="glyphter icon-banners" href="#">
+                    Banners</a>
+            </li>
+            <li>
+                <a class="glyphter icon-personaldata" href="#">
+                    Personal data</a>
+            </li>
+            <li>
+                <a class="glyphter icon-payout" href="#">
+                    Payout</a>
+            </li>
+            <li>
+                <a class="glyphter icon-postback" href="#">
+                    Postback</a>
+            </li>
+        </ul>
+
 
         <div class="avatars">
             <hr>
@@ -64,25 +75,24 @@
 
 
 
-    <!-- navbar -->
-    <div class="topbar">
- 
+        <!-- navbar -->
+        <div class="topbar">
+
             <div class="link">
                 <a class="icon-quit" href="#quit"></a>
             </div>
-    
+
             <div class="link">
                 <a class="icon-profile" href="#profile">Leonardo Dicaprio</a>
             </div>
-    
+
             <div class="link">
                 <a class="icon-notification" href="#notification">
-
-                    <div class="status"></div>    
+                    <div class="status"></div>
                 </a>
-            
+
             </div>
-    
+
             <div class="link dropdown">
                 <a class="dropbtn icon-wallet icon-arrow-down" href="#wallet">$1,500.00</a>
                 <div class="dropdown-content">
@@ -98,15 +108,12 @@
         </div>
     </div>
 
-
-
-
     <!-- main container -->
     <div class="main">
-        <div class="main-container">
+        <div class="main-container general non-active">
             <h1>GENERAL STATISTIC</h1>
 
-            <div class="contents">
+            <div class="contents-general">
 
                 <div class="datePicker">
                     <div class="frame">
@@ -164,8 +171,9 @@
                         </div>
                     </div>
 
-                    <div class="svgchart">
-                        <svg class="chartColumns" height="320" width="790">
+                    <div id="chart" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+                    <!-- <div class="svgchart"> -->
+                    <!-- <svg class="chartColumns" height="320" width="790">
                             <line x1="30" y1="300" x2="790" y2="300" style="stroke:rgb(172, 172, 172);stroke-width:1" />
                             <line x1="30" y1="0" x2="30" y2="300" style="stroke:rgb(172, 172, 172);stroke-width:1" />
                             <line x1="112" y1="0" x2="112" y2="300" style="stroke:rgb(172, 172, 172);stroke-width:1" />
@@ -229,36 +237,898 @@
                             <text text-anchor="end" x="20" y="100" fill="gray" font-size="12px">400</text>
                             <text text-anchor="end" x="20" y="50" fill="gray" font-size="12px">500</text>
                             <text text-anchor="end" x="20" y="10" fill="gray" font-size="12px">600</text>
-                        </svg>
+                        </svg> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="main-container details non-active">
+            Details Menu
+        </div>
+        <div class="main-container links non-active">
+            <h1>LINKS</h1>
+            <div class="contents-links">
+
+                <div class="button">
+                    <button class="btn addnew">
+                        <a>+ add new</a>
+                    </button>
+                </div>
+
+                <table class="hoverTable">
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Home page</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.homepage.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.homepage.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Currently offer</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.currently.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.currently.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Blurpix</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.blurpix.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.blurpix.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Your Site</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.yoursite.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.yoursite.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Google</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.google.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.google.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Facebook</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.facebook.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.facebook.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Dashboard</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.dashboard.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.dashboard.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Blurax</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.blurax.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.blurax.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Piece Of Wine</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.pieceofwine.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.pieceofwine.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-5 col-xl-6">Twitter</td>
+                        <td class="col-sm-12 col-md-8 col-lg-5 col-xl-4">http://www.twitter.com</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.twitter.com" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="button">
+                    <button class="btn addnew">
+                        <a>+ add new</a>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div class="main-container banners non-active">
+            <h1>BANNERS</h1>
+            <div class="contents-links" id="banners-links">
+
+                <div class="button">
+                    <button class="btn addbanner">
+                        <a>+ add new</a>
+                    </button>
+                </div>
+
+                <table class="hoverTable">
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-3 col-xl-6">Banner Main</td>
+                        <td class="col-sm-12 col-md-8 col-lg-7 col-xl-4">http://www.website.com/bannermain.gif</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.website.com/bannermain.gif" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-3 col-xl-6">Sign up banner</td>
+                        <td class="col-sm-12 col-md-8 col-lg-7 col-xl-4">http://www.website.com/signup.gif</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.website.com/signup.gif" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-3 col-xl-6">Banner left side</td>
+                        <td class="col-sm-12 col-md-8 col-lg-7 col-xl-4">http://www.website.com/leftside.gif</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.website.com/leftside.gif" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-3 col-xl-6">Vertical banner</td>
+                        <td class="col-sm-12 col-md-8 col-lg-7 col-xl-4">http://www.website.com/vert.gif</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.website.com/vert.gif" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-3 col-xl-6">Front banner</td>
+                        <td class="col-sm-12 col-md-8 col-lg-7 col-xl-4">http://www.website.com/front.gif</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.website.com/front.gif" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-12 col-md-12 col-lg-3 col-xl-6">Horizontal banner</td>
+                        <td class="col-sm-12 col-md-8 col-lg-7 col-xl-4">http://www.website.com/horizontal.gif</td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a href="http://www.website.com/horizontal.gif" class="glyphter icon-links non-visible"></a>
+                        </td>
+                        <td class="col-sm-12 col-md-2 col-lg-1 col-xl-1">
+                            <a class="glyphter icon-trash non-visible"></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="button">
+                    <button class="btn addbanner">
+                        <a>+ add new</a>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div class="main-container personal_data non-active">
+            <h1>PERSONAL DATA</h1>
+            <form action="" method="POST" class="contents-personal_data">
+                <!-- https://regexr.com -->
+
+                <div class="field">
+                    <label for="given-name">Name</label>
+                    <input type="text" placeholder="" name="given-name" id="name" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" maxlength="20" required>
+                </div>
+
+                <div class="field">
+                    <label for="family-name">Surname</label>
+                    <input type="text" placeholder="" name="family-name" id="sname" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input type="email" placeholder="" name="e-mail" id="email" required>
+                </div>
+
+                <div class="field">
+                    <label for="tel">Phone number</label>
+                    <input type="tel" name="tel" id="tel" pattern="^[0-9-+s()]*$" data-politespace data-grouplength="3,3,4" />
+                </div>
+                <hr>
+
+                <div class="field">
+                    <label for="skype">Skype</label>
+                    <input type="text" placeholder="" name="skype" id="skype">
+                </div>
+
+                <div class="field">
+                    <label for="icq">ICQ</label>
+                    <input type="text" placeholder="" name="icq" id="icq">
+                </div>
+
+                <div class="field">
+                    <label for="man">Man</label>
+                    <input type="text" placeholder="" name="man" id="man">
+                </div>
+                <hr>
+
+                <div class="field">
+                    <label for="wallet">Wallet</label>
+                    <input type="number" pattern="[0-9]*" step="1" max="1000000" data-politespace data-grouplength="3" data-delimiter="," data-reverse
+                        value="" name="wallet" id="wallet">
+                </div>
+                <hr>
+
+                <div class="field">
+                    <label for="psw">Password</label>
+                    <input type="password" placeholder="" name="psw" id="psw" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" oninvalid="this.setCustomValidity('UpperCase, LowerCase and Number')"
+                        oninput="setCustomValidity('')" required>
+                </div>
+
+                <div class="field">
+                    <label for="psw-repeat">Repeat</label>
+                    <input type="password" placeholder="" name="psw-repeat" id="psw-repeat" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                        oninvalid="this.setCustomValidity('UpperCase, LowerCase and Number')" oninput="setCustomValidity('')"
+                        required>
+                </div>
+                <hr>
+
+                <div class="button">
+                    <button class="btn" type="submit">
+                        <a>Save</a>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <div class="main-container payout non-active">
+            Payout Data Menu
+        </div>
+        <div class="main-container postback">
+            <h1>NEW POSTBACK</h1>
+            <h3>You can insert some parametres in this postback</h3>
+
+
+            <div class="rows row1">
+                <div class="signups col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <label for="deposit-input">Signup</label>
+                    <textarea class="deposit-input-text" id="deposit-input" type="text">
+crm_userid=%user_id%
+subid=%p%
+                </textarea>
+                </div>
+                <div class="deposit col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <label for="signup-input">Deposit</label>
+                    <textarea class="signup-input-text" id="signup-input" type="text">
+crm_userid=%user_id%
+subid=%p%
+                </textarea>
+                </div>
+
+
+            </div>
+
+            <div class="rows row2">
+
+                        <div class="postback combofield col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <label for="weight-height">Postback type</label>
+                            <select name="weight-height" id="weight-height2" class="weight-height banners-dropdown">
+                                <option hidden style="padding-left:0px;" value="">Select</option>
+                                <option>100x120</option>
+                                <option>140x160</option>
+                            </select>
+                        </div>
+
+                        <div class="countries combofield col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <label for="design">To countries</label>
+                            <select name="design" id="design" class="design banners-dropdown">
+                                <option hidden style="padding-left:0px;" value="">Select</option>
+                                <option>New Fashion</option>
+                                <option>Old School</option>
+                            </select>
+                        </div>
+
+                        <div class="sending combofield col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <label for="filetype">Sending Options:</label>
+                            <select name="filetype" id="filetype" class="filetype banners-dropdown">
+                                <option style="padding-left:0px;" value="">All</option>
+                                <option>JPG</option>
+                                <option>PDF</option>
+                                <option>PNG</option>
+                                <option>SVG</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+            <!-- <div class="rows row3">
+
+                        <div class="selectbanners col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <h3>Select banners</h3>
+                            <div class="columnbanners">
+                                <label class="checkboxcontainer">Banner main
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+
+                            </div>
+                            <div class="selectwebsites col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <h3>Select websites</h3>
+                                <div class="columnwebsites">
+                                    <label class="checkboxcontainer">Landing page Money
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                  
+                                </div>
+                            </div>
+
+                        </div> -->
+
+            <!-- <div class="rows row4">
+
+                            <div class="generatedlink col-sm-12 col-md-12 col-lg-8 col-xl-9">
+                                <div class="generatedlinkpadding">
+                                    <a>Generated Link</a>
+                                </div>
+                            </div>
+                            <div class="copy col-sm-6 col-md-6 col-lg-3 col-xl-2">
+                                <div class="button copy">
+                                    <button class="btn copy">
+                                        <i class="icon-links"></i>
+                                        <a>Copy Link</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="save col-sm-6 col-md-6 col-lg-1 col-xl-1">
+                                <div class="button save">
+                                    <button class="btn save" type="submit">
+                                        <a>Save</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div> -->
+
+
+        </div>
+
+
+        <!-- The Modal -->
+        <div id="BannerModal" class="banner-modal">
+            <!-- Modal content -->
+            <div class="banner-modal-content">
+                <div class="banner-modal-header">
+                    <h1>ADD BANNERS
+                        <span class="close">&times;</span>
+                    </h1>
+                </div>
+
+                <div class="banner-modal-body">
+                    <div class="rows row1">
+                        <div class="schemename col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                            <label for="banner-name">Scheme name</label>
+                            <input class="banner-name" id="banner-name" type="text" placeholder="Name" name="banner-name" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$"
+                                maxlength="20" required>
+                        </div>
+
+                        <div class="compain combofield col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                            <label for="compain">Compain</label>
+                            <select name="compain" id="compain" class="compain banners-dropdown">
+                                <!-- <option hidden style="padding-left:0px;" value="">Select a Country</option> -->
+                                <optgroup label="2018">
+                                    <option hidden>Select</option>
+                                    <option value="Compain2018_1">Chipotle: Back to the Start</option>
+                                    <option value="Compain2018_2">Dos Equis: Most Interesting Man in the World</option>
+                                </optgroup>
+                                <optgroup label="2017">
+                                    <option value="Compain2017_1">Budweiser: Whassup</option>
+                                    <option value="Compain2017_2">Metro Trains: Dumb Ways to Die</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="language combofield col-sm-12 col-md-12 col-lg-2 col-xl-2">
+                            <label for="language">Language</label>
+                            <select name="language" id="language" class="language banners-dropdown">
+                                <!-- <option hidden style="padding-left:0px;" value="">Select a Country</option> -->
+                                <option>EN</option>
+                                <option>PL</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="rows row2">
+
+                        <div class="weightheight combofield col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <label for="weight-height">Weight-Height</label>
+                            <select name="weight-height" id="weight-height2" class="weight-height banners-dropdown">
+                                <option hidden style="padding-left:0px;" value="">Select</option>
+                                <option>100x120</option>
+                                <option>140x160</option>
+                            </select>
+                        </div>
+
+                        <div class="design combofield col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <label for="design">Design</label>
+                            <select name="design" id="design" class="design banners-dropdown">
+                                <option hidden style="padding-left:0px;" value="">Select</option>
+                                <option>New Fashion</option>
+                                <option>Old School</option>
+                            </select>
+                        </div>
+
+                        <div class="filetype combofield col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <label for="filetype">File Type</label>
+                            <select name="filetype" id="filetype" class="filetype banners-dropdown">
+                                <option style="padding-left:0px;" value="">All</option>
+                                <option>JPG</option>
+                                <option>PDF</option>
+                                <option>PNG</option>
+                                <option>SVG</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="rows row3">
+
+                        <div class="selectbanners col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <h3>Select banners</h3>
+                            <div class="columnbanners">
+                                <label class="checkboxcontainer">Banner main
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Sign up banner
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Left banner
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Right banner
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Bottom banner
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Long banner
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Personal cabinet banner
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Popup banner
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="selectwebsites col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <h3>Select websites</h3>
+                            <div class="columnwebsites">
+                                <label class="checkboxcontainer">Landing page Money
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">LP Your choice
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">LP Wallet
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">E-Shop 01
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Toy Store
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Book Store
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">Charity
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                                <label class="checkboxcontainer">LP Icons Store
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="img non-visible">_</div>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="rows row4">
+
+                        <div class="generatedlink col-sm-12 col-md-12 col-lg-8 col-xl-9">
+                            <div class="generatedlinkpadding">
+                                <a>Generated Link</a>
+                            </div>
+                        </div>
+                        <div class="copy col-sm-6 col-md-6 col-lg-3 col-xl-2">
+                            <div class="button copy">
+                                <button class="btn copy">
+                                    <i class="icon-links"></i>
+                                    <a>Copy Link</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="save col-sm-6 col-md-6 col-lg-1 col-xl-1">
+                            <div class="button save">
+                                <button class="btn save" type="submit">
+                                    <a>Save</a>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
+            </div>
+        </div>
 
+
+        <!-- The Modal -->
+        <div id="LinksModal" class="links-modal">
+            <!-- Modal content -->
+            <div class="links-modal-content">
+                <div class="links-modal-header">
+                    <h1>ADD URL
+                        <span class="close_links">&times;</span>
+                    </h1>
+                </div>
+
+                <div class="links-modal-body">
+                    <div class="rows row1">
+                        <div class="schemename col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                            <label for="banner-name">Scheme name</label>
+                            <input class="banner-name" id="banner-name2" type="text" placeholder="Name" name="banner-name" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$"
+                                maxlength="20" required>
+                        </div>
+
+                        <div class="compain combofield col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                            <label for="compain">Compain</label>
+                            <select name="compain" id="compain2" class="compain links-dropdown">
+                                <!-- <option hidden style="padding-left:0px;" value="">Select a Country</option> -->
+                                <optgroup label="2018">
+                                    <option hidden>Select Campain</option>
+                                    <option value="Compain2018_1">Chipotle: Back to the Start</option>
+                                    <option value="Compain2018_2">Dos Equis: Most Interesting Man in the World</option>
+                                </optgroup>
+                                <optgroup label="2017">
+                                    <option value="Compain2017_1">Budweiser: Whassup</option>
+                                    <option value="Compain2017_2">Metro Trains: Dumb Ways to Die</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="language combofield col-sm-12 col-md-12 col-lg-2 col-xl-2">
+                            <label for="language">Language</label>
+                            <select name="language" id="language2" class="language links-dropdown">
+                                <!-- <option hidden style="padding-left:0px;" value="">Select a Country</option> -->
+                                <option>EN</option>
+                                <option>PL</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="rows row3">
+
+                        <div class="selectwebsites col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h3>Select websites</h3>
+                            <div class="columnwebsitesvscroll">
+                                <div class="columnwebsites">
+                                    <label class="checkboxcontainer">Landing page Money
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Your choice
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Wallet
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">E-Shop 01
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Toy Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Book Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Charity
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Icons Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Templates Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Random text
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Mobile app
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Senator free signals
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP DE Jour choise
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Inwest wisely
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Toy Store LP Sign up page
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Senator Account types
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Senator Mobile app
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Senator Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Senator April Promo
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Language Learning LP
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Your second site
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Your second LP
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Landing page Money
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Your Choice
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Wallet
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">E-Shop 01
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Toy Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Book Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Mobile app
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Senator free signals
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Your second site
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Your second LP
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Landing page Money
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Your Choice
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Wallet
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">E-Shop 01
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Toy Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Book Store
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">Mobile app
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                    <label class="checkboxcontainer">LP Senator free signals
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <div class="img non-visible">_</div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="rows row4">
+
+                        <div class="generatedlink col-sm-12 col-md-12 col-lg-8 col-xl-9">
+                            <div class="generatedlinkpadding">
+                                <a>Generated Link</a>
+                            </div>
+                        </div>
+                        <div class="copy col-sm-6 col-md-6 col-lg-3 col-xl-2">
+                            <div class="button copy">
+                                <button class="btn copy">
+                                    <i class="icon-links"></i>
+                                    <a>Copy Link</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="save col-sm-6 col-md-6 col-lg-1 col-xl-1">
+                            <div class="button save">
+                                <button class="btn save" type="submit">
+                                    <a>Save</a>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         </div>
 
     </div>
 
-    <!-- table
-        <table class="hoverTable">
-            <tr>
-                <td>Text 1A</td>
-                <td>Text 1B</td>
-                <td>Text 1C</td>
-            </tr>
-            <tr>
-                <td>Text 2A</td>
-                <td>Text 2B</td>
-                <td>Text 2C</td>
-            </tr>
-            <tr>
-                <td>Text 3A</td>
-                <td>Text 3B</td>
-                <td>Text 3C</td>
-            </tr>
-        </table> -->
 
-    <script src="js/script.js"></script>
+
+
+
+    <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 

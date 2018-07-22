@@ -3,7 +3,14 @@
 @import "normalize";
 @import "components/hamburgers/hamburgers";
 @import "layout";
+@import "pages/links";
+@import "pages/banners";
+@import "pages/linksadd";
+@import "pages/general";
+@import "pages/postback";
+@import "pages/personal_data";
 @import "Glyphter";
+@import 'https://code.highcharts.com/css/highcharts.css';
 
 // /* Components */
 // import "components/form_field";
@@ -38,6 +45,9 @@ body {
   margin-top: $topbarHeight;
   margin-left: $sidebarWidth;
   padding: 20px;
+  .non-active {
+    display: none;
+  }
 }
 
 /* The sidebar menu */
@@ -60,31 +70,43 @@ body {
     padding: 0px 0px 0px 20px;
     z-index: 999;
   }
-
-  .glyphter {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: $sidebarForeColor;
-    display: block;
-    font-family: $paragraph-font;
-    font-size: $paragraph-font-size;
-    align-items: center;
-    &:hover {
-      color: $sidebarHoverForeColor;
-      border-left: 4px solid $sidebarActiveBorder;
-      padding-left: 12px;
-      background-color: $sidebarHoverBackColor;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 0;
+      margin: 0;
+      .glyphter {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: $sidebarForeColor;
+        display: block;
+        font-family: $paragraph-font;
+        font-size: $paragraph-font-size;
+        align-items: center;
+        line-height: 2.1;
+        &:before {
+          margin-right: 10px;
+        }
+        &:hover {
+          color: $sidebarHoverForeColor;
+          border-left: 4px solid $sidebarActiveBorder;
+          padding-left: 12px;
+          background-color: $sidebarHoverBackColor;
+        }
+      }
+      .active {
+        color: $sidebarHoverForeColor;
+        border-left: 4px solid $sidebarActiveBorder;
+        padding-left: 12px;
+        background-color: $sidebarHoverBackColor;
+      }
     }
   }
 
-  .active {
-    color: $sidebarHoverForeColor;
-    border-left: 4px solid $sidebarActiveBorder;
-    padding-left: 12px;
-    background-color: $sidebarHoverBackColor;
-  }
   .avatars {
+    padding-bottom: 20px;
     hr {
       height: 2px;
       background-color: $sidebarForeColor;
@@ -109,6 +131,7 @@ body {
       background-repeat: no-repeat;
       background-position: center center;
       background-position-x: 1px;
+
       .status {
         position: absolute;
         margin: 0px 0px 0px 38px;
@@ -130,11 +153,11 @@ body {
 /* The navigation bar */
 .topbar {
   //   overflow: hidden;
-  background-color: transparent;
+  background-color: white;
   position: fixed;
   top: 0;
-  width: 100%;
-  height: $topbarHeight;
+
+  height: ($topbarHeight)-1px;
   right: 0;
   z-index: 1;
 
@@ -199,182 +222,32 @@ body {
   }
 }
 
-.main-container {
-  background-color: white;
-  margin: 0 auto;
-  box-shadow: 0px 2px 5px 0px $mainContainerShadowColor;
-  h1 {
-    font-family: $paragraph-font;
-    font-weight: 5;
-    color: $mainContainerFont1Color;
-    margin: 0;
-    padding: 0 0 0 20px;
-    min-height: 50px;
-    border-bottom: 1px solid $mainContainerBorderColor1;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-  }
-
-  .contents {
-    .datePicker {
+.main {
+  .main-container {
+    background-color: white;
+    margin: 0 auto;
+    box-shadow: 0px 2px 5px 0px $mainContainerShadowColor;
+    h1 {
+      font-family: $paragraph-font;
+      font-weight: 5;
+      color: $mainContainerFont1Color;
+      margin: 0;
+      padding: 0 0 0 20px;
+      min-height: 50px;
+      border-bottom: 1px solid $mainContainerBorderColor1;
+      font-size: 18px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 40px;
-      border-bottom: 1px solid $mainContainerBorderColor1;
-      .frame {
-        border: 1px solid $mainContainerBorderColor1;
-        border-radius: 3px;
-        display: flex;
-      }
-      a {
-        font-family: paragraph-font;
-        text-decoration: none;
-        color: black;
-        padding: 0px 60px 0px 20px;
-        font-size: 17px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      a:nth-of-type(2) {
-        border-left: 2px solid $mainContainerBorderColor1;
-        border-image: linear-gradient(
-          to bottom,
-          $mainContainerBorderColor2 15%,
-          $mainContainerBorderColor3 15%,
-          $mainContainerBorderColor3 90%,
-          $mainContainerBorderColor2 90%
-        );
-        border-image-slice: 1;
-      }
-      .icon-calendar {
-        padding-right: 0px;
-      }
-    }
-    .btn {
-      background-color: $generalTabButtonBackColor;
-      border: none;
-      color: $generalTabButtonForeColor;
-      font-size: 15px;
-      padding: 5px 3px 5px 12px;
-      margin-left: 13px;
-      text-align: center;
-      cursor: pointer;
-      border-radius: 3px;
-      &:hover {
-        background-color: $generalTabButtonBackColor2;
-      }
-    }
-    .chart {
-      max-width: 80%;
-      margin: 0 auto;
-      .chartData {
-        // * {
-        // border: 1px solid red; // }
-        padding: 35px 0px 50px;
-        display: flex;
-        justify-content: center;
-        .stats {
-          height: 80px;
-          display: flex;
-          min-width: 60%;
-          width: 100%;
-          align-items: center;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          .stat {
-            border-bottom: 1px solid $mainContainerBorderColor1;
-            display: flex;
-            min-width: 45%;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            a {
-              font-family: $paragraph-font;
-            }
-            .data {
-              float: left;
-              flex: 1;
-              text-align: right;
-            }
-            .parameter {
-              color: $mainContainerFont1Color;
-              flex: 4;
-              font-weight: 700;
-            }
-          }
-        }
-      }
-      h2 {
-        color: $sidebarForeColor;
-        font-family: $paragraph-font;
-        font-size: 16px;
-        font-weight: 700;
-        padding: 0;
-        margin: 0;
-      }
-      .legend {
-        padding: 30px 0px 0px 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        div {
-          font-family: $paragraph-font;
-          height: 40px;
-          color: $mainContainerFont1Color;
-          padding: 0 10px 0 0;
-          display: flex;
-          align-items: center;
-          margin: 10px 20px;
-          background-color: rgb(240, 240, 240);
-          border-radius: 3px;
-        }
-        .legend-1 {
-          .circle {
-            fill: rgb(128, 191, 202);
-          }
-        }
-        .legend-2 {
-          .circle {
-            fill: $generalTabButtonBackColor;
-          }
-        }
-        .legend-3 {
-          background-color: rgb(255, 255, 255);
-          .circle {
-            fill: rgb(89, 182, 109);
-          }
-        }
-      }
-      .svgchart {
-        padding: 50px 0;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        .chartColumns {
-          .col1 {
-            fill: rgb(128, 191, 202);
-          }
-          .col2 {
-            fill: $generalTabButtonBackColor;
-          }
-        }
-      }
     }
   }
 }
-@media screen and (max-width: 833px) {
+ 
+
+@media screen and (max-width: $Media850) {
   .sidenav {
-    // height: 70px;
     overflow: hidden;
     width: 100%;
     position: relative;
-    .avatars {
-      padding-bottom: 20px;
-    }
   }
   .main {
     margin: 0;
@@ -400,18 +273,3 @@ body {
     display: none;
   }
 }
-// .hoverTable {
-// width: 100%;
-// border-collapse: collapse;
-// .hoverTable td {
-// padding: 7px;
-// border: #2b2929 1px solid;
-// }
-// /* Define the default color for all the table rows */
-// .hoverTable tr {
-// background: #ffffff;
-// }
-// /* Define the hover highlight color for the table row */
-// .hoverTable tr:hover {
-// background-color: #ffff99;
-// }
